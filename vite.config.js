@@ -6,4 +6,3 @@ export default defineConfig({
   base: '/powerpuff-timer/',  // Set this to the repository name
   plugins: [react()],
 })
-
