@@ -1,0 +1,214 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+/* Timer container */
+.timer-box {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3); /* optional translucent inner background */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+/* Main title */
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Time input */
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100px;
+}
+
+/* Buttons */
+.button-group button,
+.character-buttons button {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.button-group button:hover,
+.character-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Timer display */
+.timer-display {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Character image */
+.character-image {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Theme backgrounds */
+.blossom {
+  background-color: #ffe6eb;
+  color: #d6336c;
+}
+
+.bubbles {
+  background-color: #e0f7ff;
+  color: #0077b6;
+}
+
+.buttercup {
+  background-color: #e3f9e5;
+  color: #1b5e20;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.time-up-banner {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff0080;
+  margin-top: 1rem;
+  animation: pop-in 0.3s ease-out, pulse 1s infinite;
+}
+
+/* Bounce effect when it shows */
+@keyframes pop-in {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Gentle pulsing */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.time-up-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.time-up-content {
+  background-color: white;
+  color: #ff0080;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  animation: pop-in 0.3s ease-out, pulse 1s infinite;
+}
+
+.time-up-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.time-up-content button {
+  background-color: #ff0080;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.time-up-content button:hover {
+  background-color: #e60073;
+}
+
+.preset-buttons {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.preset-buttons button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.flying {
+  animation: fly-across 4s linear infinite;
+  position: relative;
+
+}
+
+
+@keyframes fly-across {
+  0%   { left: 100vw; top: 0; transform: scaleX(-1); }
+  50%  { left: 50vw; top: -20px; transform: scaleX(-1); }
+  100% { left: -150px; top: 0; transform: scaleX(-1); }
+}
+
+
+.celebrating {
+  animation: pop-in 0.4s ease-in-out;
+}
+
+
